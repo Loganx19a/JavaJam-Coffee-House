@@ -1,0 +1,98 @@
+/* page settings */
+:root {
+  --body-text-color: #221811;
+  --body-border-color: #D2B48C;
+  --article-back-color: rgb(252, 235, 182);
+  --article-border-color: #666;
+  --h3-back-color: #221811;
+}
+* { 
+  box-sizing: border-box; /* makes width based on content + padding + border */
+}
+header, main, article, footer { 
+  display: block; /* make HTML5 elements work on older browsers */ 
+}
+
+body {
+  width: 100%;
+  border-left: 5px solid var(--body-border-color);
+  border-right: 5px solid var(--body-border-color);
+  margin: 0;
+  font-family: Verdana, Arial, sans-serif;
+  background-image: url("images/background.gif");
+  color: var(--body-text-color);
+}
+header {
+  background-color: var(--body-border-color);
+}
+header h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 2.5em;
+  margin: 0;
+  padding: .5em 0 1em 0;
+  text-shadow: 2px 2px 2px var(--body-text-color);
+}
+main {
+  display: flex;
+}
+main article h3 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: var(--article-back-color);
+}
+main article {
+  background-color: var(--article-back-color);
+  border: 1px solid var(--article-border-color);
+  box-shadow: 2px 2px 5px var(--article-border-color);
+  flex: 1;
+  margin: .25em;
+}
+main article p {
+  padding: 0 .5em;
+}
+main article div {
+  background-image: url("images/javajamlogo.jpg");
+  background-repeat: no-repeat;
+  background-color: var(--h3-back-color);
+  background-size: contain;
+  background-position: top right;
+  height: 5em;
+  padding: .5em;
+}
+main article img {
+  width: 100%;
+  max-width: 400px;
+}
+footer {
+  font-size: 0.75em;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  background-color: var(--body-border-color);
+}
+footer a {
+  color: var(--body-text-color);
+}
+@media only screen and (max-width: 1360px) { 
+  main article div {
+    background-image: none;
+  }
+}
+@media only screen and (max-width: 1060px) {
+  main article h3 {
+    font-size: 80%;
+  }
+}
+@media only screen and (max-width: 850px) {
+  body {
+    margin: 0 auto;
+    max-width: 410px;
+    font-size: 80%;
+  }
+  main {
+    flex-direction: column;
+  }
+  main article {
+    margin: 0;
+    box-shadow: none;
+  }
+}
